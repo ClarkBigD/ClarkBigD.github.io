@@ -18,16 +18,16 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="2024 BUAA-OO Unit1表达式展开总结前言本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。 架构设计体验第一次作业本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度至多为 1 层）的单变量表达式，输出恒等变形展开所有括号后的表达式。 第一次作业的要求不算复杂，">
+        <meta name="description" content="前言本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。 架构设计体验第一次作业本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度至多为 1 层）的单变量表达式，输出恒等变形展开所有括号后的表达式。 第一次作业的要求不算复杂，最大的难点在于理解课程组给出的关于表达式、项和因子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unit1表达式展开总结">
+<meta property="og:title" content="2024 BUAA-OO Unit1表达式展开总结">
 <meta property="og:url" content="http://example.com/2024/03/31/Unit1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B1%95%E5%BC%80%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="ClarkBigD Digital World">
-<meta property="og:description" content="2024 BUAA-OO Unit1表达式展开总结前言本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。 架构设计体验第一次作业本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度至多为 1 层）的单变量表达式，输出恒等变形展开所有括号后的表达式。 第一次作业的要求不算复杂，">
+<meta property="og:description" content="前言本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。 架构设计体验第一次作业本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度至多为 1 层）的单变量表达式，输出恒等变形展开所有括号后的表达式。 第一次作业的要求不算复杂，最大的难点在于理解课程组给出的关于表达式、项和因子">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/Users/yanshaoze/Desktop/Grade2down/ObjectOriented/Homework/Unit1/oohomework_2024_22371456_hw_3/hw3.png">
 <meta property="article:published_time" content="2024-03-31T08:40:30.000Z">
-<meta property="article:modified_time" content="2024-03-31T08:41:17.049Z">
+<meta property="article:modified_time" content="2024-03-31T15:04:18.743Z">
 <meta property="article:author" content="ClarkBigD">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/Users/yanshaoze/Desktop/Grade2down/ObjectOriented/Homework/Unit1/oohomework_2024_22371456_hw_3/hw3.png">
@@ -42,7 +42,7 @@
     
     <title>
         
-            Unit1表达式展开总结 -
+            2024 BUAA-OO Unit1表达式展开总结 -
         
         ClarkBigD Digital World
     </title>
@@ -230,7 +230,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":["一块一块建造梦想～"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -280,6 +280,10 @@
 
     <div class="navbar-content ">
         <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.jpg">
+                </a>
             
             <a class="logo-title" href="/">
                 
@@ -388,7 +392,7 @@
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">Unit1表达式展开总结</h1>
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">2024 BUAA-OO Unit1表达式展开总结</h1>
                 </div>
             
             </div>
@@ -416,8 +420,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-03-31 16:41:17</span>
-            <span class="mobile">2024-03-31 16:41:17</span>
+            <span class="desktop">2024-03-31 23:04:18</span>
+            <span class="mobile">2024-03-31 23:04:18</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -444,7 +448,7 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="2024-BUAA-OO-Unit1表达式展开总结"><a href="#2024-BUAA-OO-Unit1表达式展开总结" class="headerlink" title="2024 BUAA-OO Unit1表达式展开总结"></a>2024 BUAA-OO Unit1表达式展开总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。</p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本次面向对象设计与构造第一单元的三次作业通过迭代实现了对输入的表达式进行展开和计算的功能。通过本单元学习，我对于递归下降和深克隆等等有了更深的认识。</p>
 <h2 id="架构设计体验"><a href="#架构设计体验" class="headerlink" title="架构设计体验"></a>架构设计体验</h2><h3 id="第一次作业"><a href="#第一次作业" class="headerlink" title="第一次作业"></a>第一次作业</h3><p>本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度<strong>至多为 1 层</strong>）的<strong>单变量</strong>表达式，输出<strong>恒等变形展开所有括号后</strong>的表达式。</p>
 <p>第一次作业的要求不算复杂，最大的难点在于理解课程组给出的关于表达式、项和因子的层次化表达以及递归下降的方法。在我看来第一次作业可以拆解成两大模块：表达式的解析、展开后的计算和合并。</p>
 <p>解析这部分的核心就是Lexer和Parser两个类，Lexer作为分词器负责将输入的表达式的组成部分识别和提取出来，在这里我借鉴了oolens公众号推文中的做法，在初始化Lexer时就将输入的字符串input解析好存入<code>ArrayList&lt;Token&gt;</code>中，之后在Parser中每次调用Lexer.nextToken()方法将ArrayList的下标加一即可。</p>
@@ -1352,14 +1356,14 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Unit1表达式展开总结</li>
+        <li><strong>Title:</strong> 2024 BUAA-OO Unit1表达式展开总结</li>
         <li><strong>Author:</strong> ClarkBigD</li>
         <li><strong>Created at
                 :</strong> 2024-03-31 16:40:30</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-03-31 16:41:17
+                    :</strong> 2024-03-31 23:04:18
             </li>
         
         <li>
@@ -1473,8 +1477,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Unit1表达式展开总结</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2024-BUAA-OO-Unit1%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B1%95%E5%BC%80%E6%80%BB%E7%BB%93"><span class="nav-text">2024 BUAA-OO Unit1表达式展开总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C"><span class="nav-text">架构设计体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第一次作业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第二次作业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第三次作业</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug%E5%88%86%E6%9E%90"><span class="nav-text">bug分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E9%9D%A2"><span class="nav-text">优化方面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%BA%A6%E9%87%8F"><span class="nav-text">程序结构度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9AUML%E5%9B%BE"><span class="nav-text">第三次作业UML图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E6%A8%A1%EF%BC%9A"><span class="nav-text">代码规模：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-text">心得体会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91"><span class="nav-text">未来方向</span></a></li></ol></li></ol>
+        <div class="page-title">2024 BUAA-OO Unit1表达式展开总结</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BD%93%E9%AA%8C"><span class="nav-text">架构设计体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第一次作业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第二次作业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="nav-text">第三次作业</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug%E5%88%86%E6%9E%90"><span class="nav-text">bug分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E9%9D%A2"><span class="nav-text">优化方面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E5%BA%A6%E9%87%8F"><span class="nav-text">程序结构度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9AUML%E5%9B%BE"><span class="nav-text">第三次作业UML图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E6%A8%A1%EF%BC%9A"><span class="nav-text">代码规模：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-text">复杂度分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-text">心得体会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91"><span class="nav-text">未来方向</span></a></li></ol>
 
     </div>
 </div>
