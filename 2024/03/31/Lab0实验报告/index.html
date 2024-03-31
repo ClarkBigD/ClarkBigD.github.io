@@ -184,14 +184,44 @@
 </li>
 </ul>
 <h4 id="A"><a href="#A" class="headerlink" title="A:"></a>A:</h4><p>执行<code>cat Untracked.txt</code>后输出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line"></span><br><span class="line">尚无提交</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 <span class="string">&quot;git add &lt;文件&gt;...&quot;</span> 以包含要提交的内容）</span><br><span class="line">        Untracked.txt</span><br><span class="line"></span><br><span class="line">提交为空，但是存在尚未跟踪的文件（使用 <span class="string">&quot;git add&quot;</span> 建立跟踪）</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">位于分支 master
 
+尚无提交
+
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Untracked.txt
+
+提交为空，但是存在尚未跟踪的文件（使用 &quot;git add&quot; 建立跟踪）
+</code></pre>
 <p>执行<code>cat Stage.txt</code>后输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line"></span><br><span class="line">尚无提交</span><br><span class="line"></span><br><span class="line">要提交的变更：</span><br><span class="line">  （使用 &quot;git rm --cached &lt;文件&gt;...&quot; 以取消暂存）</span><br><span class="line">        新文件：   README.txt</span><br><span class="line">        新文件：   Untracked.txt</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）</span><br><span class="line">        Stage.txt</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">位于分支 master
 
+尚无提交
+
+要提交的变更：
+  （使用 &quot;git rm --cached &lt;文件&gt;...&quot; 以取消暂存）
+        新文件：   README.txt
+        新文件：   Untracked.txt
+
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Stage.txt
+</code></pre>
 <p>执行<code>cat Modified.txt</code>后输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line">尚未暂存以备提交的变更：</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）</span><br><span class="line">  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）</span><br><span class="line">        修改：     README.txt</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）</span><br><span class="line">        Modified.txt</span><br><span class="line">        Stage.txt</span><br><span class="line"></span><br><span class="line">修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">位于分支 master
+尚未暂存以备提交的变更：
+  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
+  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+        修改：     README.txt
 
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Modified.txt
+        Stage.txt
+
+修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+</code></pre>
 <p><code>cat Modified.txt</code>与执行add前的status并不一样，第一次add之前是的status是<strong>未跟踪的文件</strong>, 修改README.txt之后的status是<em><strong>尚未暂存以备提交的变更</strong></em>，并提示<strong>修改: README.txt</strong>。因为第一次add之前我们刚刚在工作区新建README.md文件，在工作区中之前没有出现过，在暂存区中没有README.txt，所以显示该文件没有被追踪。而修改README.txt后，这时候在工作区和暂存区都存在，即该文件已被追踪到，因此会显示该文件已被修改而不是“未被追踪”。</p>
 <h3 id="Thinking-0-2"><a href="#Thinking-0-2" class="headerlink" title="Thinking 0.2"></a>Thinking 0.2</h3><h4 id="Q-仔细看看0-10，思考一下箭头中的-add-the-file-、stage-the-file-和-commit-分别对应的是-Git-里的哪些命令呢？"><a href="#Q-仔细看看0-10，思考一下箭头中的-add-the-file-、stage-the-file-和-commit-分别对应的是-Git-里的哪些命令呢？" class="headerlink" title="Q:仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？"></a>Q:仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？</h4><h4 id="A-1"><a href="#A-1" class="headerlink" title="A:"></a>A:</h4><ul>
 <li><p>add the file -&gt; git add</p>
@@ -248,11 +278,34 @@
 <li>echo forth &gt;&gt; output.txt</li>
 </ul>
 <h4 id="A-4"><a href="#A-4" class="headerlink" title="A:"></a>A:</h4><p>![7761710380477_.pic](&#x2F;Users&#x2F;yanshaoze&#x2F;Library&#x2F;Containers&#x2F;com.tencent.xinWeChat&#x2F;Data&#x2F;Library&#x2F;Application Support&#x2F;com.tencent.xinWeChat&#x2F;2.0b4.0.9&#x2F;4edf236a49580892cf436207d52395f4&#x2F;Message&#x2F;MessageTemp&#x2F;9e20f478899dc29eb19741386f9343c8&#x2F;Image&#x2F;7761710380477_.pic.jpg)</p>
-<h3 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h3><h4 id="Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别"><a href="#Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别" class="headerlink" title="Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo echo Shell Start 效果是否有区别; echo echo $c&gt;file1与 echo echo $c&gt;file1 效果是否有区别."></a>Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo <code>echo Shell Start</code> 效果是否有区别; echo echo $c&gt;file1与 echo <code>echo $c&gt;file1</code> 效果是否有区别.</h4><h4 id="A-5"><a href="#A-5" class="headerlink" title="A:"></a>A:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash                                                              </span></span><br><span class="line"><span class="built_in">touch</span> <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo Shell Start...&#x27;</span> &gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set a = 1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;a=1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set b = 2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;b=2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set c = a+b&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;c=$[$a+$b]&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo c = $c&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save c to ./file1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $c&gt;file1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save b to ./file2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $b&gt;file2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save a to ./file3&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $a&gt;file3&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save file1 file2 file3 to file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file1&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file2&gt;&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file3&gt;&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save file4 to ./result&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file4&gt;&gt;result&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h3><h4 id="Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别"><a href="#Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别" class="headerlink" title="Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo echo Shell Start 效果是否有区别; echo echo $c&gt;file1与 echo echo $c&gt;file1 效果是否有区别."></a>Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo <code>echo Shell Start</code> 效果是否有区别; echo echo $c&gt;file1与 echo <code>echo $c&gt;file1</code> 效果是否有区别.</h4><h4 id="A-5"><a href="#A-5" class="headerlink" title="A:"></a>A:</h4><pre><code class="bash">#!/bin/bash                                                              
+touch test
+echo &#39;echo Shell Start...&#39; &gt; test
+echo &#39;echo set a = 1&#39; &gt;&gt; test
+echo &#39;a=1&#39; &gt;&gt; test
+echo &#39;echo set b = 2&#39; &gt;&gt; test
+echo &#39;b=2&#39; &gt;&gt; test
+echo &#39;echo set c = a+b&#39; &gt;&gt; test
+echo &#39;c=$[$a+$b]&#39; &gt;&gt; test
+echo &#39;echo c = $c&#39; &gt;&gt; test
+echo &#39;echo save c to ./file1&#39; &gt;&gt; test
+echo &#39;echo $c&gt;file1&#39; &gt;&gt; test
+echo &#39;echo save b to ./file2&#39; &gt;&gt; test
+echo &#39;echo $b&gt;file2&#39; &gt;&gt; test
+echo &#39;echo save a to ./file3&#39; &gt;&gt; test
+echo &#39;echo $a&gt;file3&#39; &gt;&gt; test
+echo &#39;echo save file1 file2 file3 to file4&#39; &gt;&gt; test
+echo &#39;cat file1&gt;file4&#39; &gt;&gt; test
+echo &#39;cat file2&gt;&gt;file4&#39; &gt;&gt; test
+echo &#39;cat file3&gt;&gt;file4&#39; &gt;&gt; test
+echo &#39;echo save file4 to ./result&#39; &gt;&gt; test
+echo &#39;cat file4&gt;&gt;result&#39; &gt;&gt; test
+</code></pre>
 <p>result中内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">3
+2
+1
+</code></pre>
 <ul>
 <li><p>echo echo Shell Start是直接输出“echo Shell Start”; 而 echo <code>echo Shell Start</code>是将 “echo Shell Start” 的输出作为 外层echo 的输入，故会输出 “Shell Start”；</p>
 </li>
@@ -288,8 +341,13 @@
 <li>-p选项递归查找父进程</li>
 </ul>
 <p>前两个问题可以用提示中给出的sort命令和grep命令解决，难点在于第三个问题，我的extra最后只得60分就在于卡在了第三个空，主要原因是不知道如何将awk输出的值赋值给变量，课后跟同学交流后完善了我课上的答案，经测试可以运行得出正确结果。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="variable">$PID</span></span><br><span class="line"><span class="keyword">while</span> ((a &gt; <span class="number">0</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    awk -v input=<span class="variable">$a</span> <span class="string">&#x27;$2==input &#123;print $3&#125;&#x27;</span> <span class="variable">$FILE</span></span><br><span class="line">    a=$(awk -v input=<span class="variable">$a</span> <span class="string">&#x27;$2==input &#123;print $3&#125;&#x27;</span> <span class="variable">$FILE</span>)</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">a=$PID
+while ((a &gt; 0))
+do
+    awk -v input=$a &#39;$2==input &#123;print $3&#125;&#39; $FILE
+    a=$(awk -v input=$a &#39;$2==input &#123;print $3&#125;&#39; $FILE)
+done
+</code></pre>
 <p>我的错误点就在于不知道可以用$()的方式将一条命令的输出值赋值给变量，通过本次extra的教训我对于shell的基本语法有了更进一步的掌握。</p>
 
     </div>

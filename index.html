@@ -204,14 +204,44 @@
 </li>
 </ul>
 <h4 id="A"><a href="#A" class="headerlink" title="A:"></a>A:</h4><p>执行<code>cat Untracked.txt</code>后输出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line"></span><br><span class="line">尚无提交</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 <span class="string">&quot;git add &lt;文件&gt;...&quot;</span> 以包含要提交的内容）</span><br><span class="line">        Untracked.txt</span><br><span class="line"></span><br><span class="line">提交为空，但是存在尚未跟踪的文件（使用 <span class="string">&quot;git add&quot;</span> 建立跟踪）</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">位于分支 master
 
+尚无提交
+
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Untracked.txt
+
+提交为空，但是存在尚未跟踪的文件（使用 &quot;git add&quot; 建立跟踪）
+</code></pre>
 <p>执行<code>cat Stage.txt</code>后输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line"></span><br><span class="line">尚无提交</span><br><span class="line"></span><br><span class="line">要提交的变更：</span><br><span class="line">  （使用 &quot;git rm --cached &lt;文件&gt;...&quot; 以取消暂存）</span><br><span class="line">        新文件：   README.txt</span><br><span class="line">        新文件：   Untracked.txt</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）</span><br><span class="line">        Stage.txt</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">位于分支 master
 
+尚无提交
+
+要提交的变更：
+  （使用 &quot;git rm --cached &lt;文件&gt;...&quot; 以取消暂存）
+        新文件：   README.txt
+        新文件：   Untracked.txt
+
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Stage.txt
+</code></pre>
 <p>执行<code>cat Modified.txt</code>后输出：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line">尚未暂存以备提交的变更：</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）</span><br><span class="line">  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）</span><br><span class="line">        修改：     README.txt</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）</span><br><span class="line">        Modified.txt</span><br><span class="line">        Stage.txt</span><br><span class="line"></span><br><span class="line">修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">位于分支 master
+尚未暂存以备提交的变更：
+  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
+  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+        修改：     README.txt
 
+未跟踪的文件:
+  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）
+        Modified.txt
+        Stage.txt
+
+修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+</code></pre>
 <p><code>cat Modified.txt</code>与执行add前的status并不一样，第一次add之前是的status是<strong>未跟踪的文件</strong>, 修改README.txt之后的status是<em><strong>尚未暂存以备提交的变更</strong></em>，并提示<strong>修改: README.txt</strong>。因为第一次add之前我们刚刚在工作区新建README.md文件，在工作区中之前没有出现过，在暂存区中没有README.txt，所以显示该文件没有被追踪。而修改README.txt后，这时候在工作区和暂存区都存在，即该文件已被追踪到，因此会显示该文件已被修改而不是“未被追踪”。</p>
 <h3 id="Thinking-0-2"><a href="#Thinking-0-2" class="headerlink" title="Thinking 0.2"></a>Thinking 0.2</h3><h4 id="Q-仔细看看0-10，思考一下箭头中的-add-the-file-、stage-the-file-和-commit-分别对应的是-Git-里的哪些命令呢？"><a href="#Q-仔细看看0-10，思考一下箭头中的-add-the-file-、stage-the-file-和-commit-分别对应的是-Git-里的哪些命令呢？" class="headerlink" title="Q:仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？"></a>Q:仔细看看0.10，思考一下箭头中的 add the file 、stage the file 和 commit 分别对应的是 Git 里的哪些命令呢？</h4><h4 id="A-1"><a href="#A-1" class="headerlink" title="A:"></a>A:</h4><ul>
 <li><p>add the file -&gt; git add</p>
@@ -268,11 +298,34 @@
 <li>echo forth &gt;&gt; output.txt</li>
 </ul>
 <h4 id="A-4"><a href="#A-4" class="headerlink" title="A:"></a>A:</h4><p>![7761710380477_.pic](&#x2F;Users&#x2F;yanshaoze&#x2F;Library&#x2F;Containers&#x2F;com.tencent.xinWeChat&#x2F;Data&#x2F;Library&#x2F;Application Support&#x2F;com.tencent.xinWeChat&#x2F;2.0b4.0.9&#x2F;4edf236a49580892cf436207d52395f4&#x2F;Message&#x2F;MessageTemp&#x2F;9e20f478899dc29eb19741386f9343c8&#x2F;Image&#x2F;7761710380477_.pic.jpg)</p>
-<h3 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h3><h4 id="Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别"><a href="#Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别" class="headerlink" title="Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo echo Shell Start 效果是否有区别; echo echo $c&gt;file1与 echo echo $c&gt;file1 效果是否有区别."></a>Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo <code>echo Shell Start</code> 效果是否有区别; echo echo $c&gt;file1与 echo <code>echo $c&gt;file1</code> 效果是否有区别.</h4><h4 id="A-5"><a href="#A-5" class="headerlink" title="A:"></a>A:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash                                                              </span></span><br><span class="line"><span class="built_in">touch</span> <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo Shell Start...&#x27;</span> &gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set a = 1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;a=1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set b = 2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;b=2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo set c = a+b&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;c=$[$a+$b]&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo c = $c&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save c to ./file1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $c&gt;file1&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save b to ./file2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $b&gt;file2&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save a to ./file3&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo $a&gt;file3&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save file1 file2 file3 to file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file1&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file2&gt;&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file3&gt;&gt;file4&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;echo save file4 to ./result&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;cat file4&gt;&gt;result&#x27;</span> &gt;&gt; <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Thinking-0-6"><a href="#Thinking-0-6" class="headerlink" title="Thinking 0.6"></a>Thinking 0.6</h3><h4 id="Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别"><a href="#Q-使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为-test），将创建该文件的命令序列保存在-command-文件中，并将-test-文件作为批处理文件运行，将运行结果输出至-result-文件中。给出-command-文件和-result-文件的内容，并对最后的结果进行解释说明（可以从-test-文件的内容入手）-具体实现的过程中思考下列问题-echo-echo-Shell-Start-与-echo-echo-Shell-Start-效果是否有区别-echo-echo-c-file1与-echo-echo-c-file1-效果是否有区别" class="headerlink" title="Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo echo Shell Start 效果是否有区别; echo echo $c&gt;file1与 echo echo $c&gt;file1 效果是否有区别."></a>Q:使用你知道的方法（包括重定向）创建下图内容的文件（文件命名为 test），将创建该文件的命令序列保存在 command 文件中，并将 test 文件作为批处理文件运行，将运行结果输出至 result 文件中。给出 command 文件和 result 文件的内容，并对最后的结果进行解释说明（可以从 test 文件的内容入手）. 具体实现的过程中思考下列问题: echo echo Shell Start 与 echo <code>echo Shell Start</code> 效果是否有区别; echo echo $c&gt;file1与 echo <code>echo $c&gt;file1</code> 效果是否有区别.</h4><h4 id="A-5"><a href="#A-5" class="headerlink" title="A:"></a>A:</h4><pre><code class="bash">#!/bin/bash                                                              
+touch test
+echo &#39;echo Shell Start...&#39; &gt; test
+echo &#39;echo set a = 1&#39; &gt;&gt; test
+echo &#39;a=1&#39; &gt;&gt; test
+echo &#39;echo set b = 2&#39; &gt;&gt; test
+echo &#39;b=2&#39; &gt;&gt; test
+echo &#39;echo set c = a+b&#39; &gt;&gt; test
+echo &#39;c=$[$a+$b]&#39; &gt;&gt; test
+echo &#39;echo c = $c&#39; &gt;&gt; test
+echo &#39;echo save c to ./file1&#39; &gt;&gt; test
+echo &#39;echo $c&gt;file1&#39; &gt;&gt; test
+echo &#39;echo save b to ./file2&#39; &gt;&gt; test
+echo &#39;echo $b&gt;file2&#39; &gt;&gt; test
+echo &#39;echo save a to ./file3&#39; &gt;&gt; test
+echo &#39;echo $a&gt;file3&#39; &gt;&gt; test
+echo &#39;echo save file1 file2 file3 to file4&#39; &gt;&gt; test
+echo &#39;cat file1&gt;file4&#39; &gt;&gt; test
+echo &#39;cat file2&gt;&gt;file4&#39; &gt;&gt; test
+echo &#39;cat file3&gt;&gt;file4&#39; &gt;&gt; test
+echo &#39;echo save file4 to ./result&#39; &gt;&gt; test
+echo &#39;cat file4&gt;&gt;result&#39; &gt;&gt; test
+</code></pre>
 <p>result中内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">3
+2
+1
+</code></pre>
 <ul>
 <li><p>echo echo Shell Start是直接输出“echo Shell Start”; 而 echo <code>echo Shell Start</code>是将 “echo Shell Start” 的输出作为 外层echo 的输入，故会输出 “Shell Start”；</p>
 </li>
@@ -308,8 +361,13 @@
 <li>-p选项递归查找父进程</li>
 </ul>
 <p>前两个问题可以用提示中给出的sort命令和grep命令解决，难点在于第三个问题，我的extra最后只得60分就在于卡在了第三个空，主要原因是不知道如何将awk输出的值赋值给变量，课后跟同学交流后完善了我课上的答案，经测试可以运行得出正确结果。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="variable">$PID</span></span><br><span class="line"><span class="keyword">while</span> ((a &gt; <span class="number">0</span>))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    awk -v input=<span class="variable">$a</span> <span class="string">&#x27;$2==input &#123;print $3&#125;&#x27;</span> <span class="variable">$FILE</span></span><br><span class="line">    a=$(awk -v input=<span class="variable">$a</span> <span class="string">&#x27;$2==input &#123;print $3&#125;&#x27;</span> <span class="variable">$FILE</span>)</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">a=$PID
+while ((a &gt; 0))
+do
+    awk -v input=$a &#39;$2==input &#123;print $3&#125;&#39; $FILE
+    a=$(awk -v input=$a &#39;$2==input &#123;print $3&#125;&#39; $FILE)
+done
+</code></pre>
 <p>我的错误点就在于不知道可以用$()的方式将一条命令的输出值赋值给变量，通过本次extra的教训我对于shell的基本语法有了更进一步的掌握。</p>
 
             
@@ -345,12 +403,38 @@
 <h2 id="架构设计体验"><a href="#架构设计体验" class="headerlink" title="架构设计体验"></a>架构设计体验</h2><h3 id="第一次作业"><a href="#第一次作业" class="headerlink" title="第一次作业"></a>第一次作业</h3><p>本次作业需要完成的任务为：读入一个包含加、减、乘、乘方以及括号（其中括号的深度<strong>至多为 1 层</strong>）的<strong>单变量</strong>表达式，输出<strong>恒等变形展开所有括号后</strong>的表达式。</p>
 <p>第一次作业的要求不算复杂，最大的难点在于理解课程组给出的关于表达式、项和因子的层次化表达以及递归下降的方法。在我看来第一次作业可以拆解成两大模块：表达式的解析、展开后的计算和合并。</p>
 <p>解析这部分的核心就是Lexer和Parser两个类，Lexer作为分词器负责将输入的表达式的组成部分识别和提取出来，在这里我借鉴了oolens公众号推文中的做法，在初始化Lexer时就将输入的字符串input解析好存入<code>ArrayList&lt;Token&gt;</code>中，之后在Parser中每次调用Lexer.nextToken()方法将ArrayList的下标加一即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Lexer.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Lexer</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">pos</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String input;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">indexOfToken</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> ArrayList&lt;Token&gt; tokens;</span><br><span class="line">  </span><br><span class="line">  	<span class="keyword">public</span> <span class="title function_">Lexer</span><span class="params">(String input)</span> &#123;</span><br><span class="line">       	<span class="comment">//TODO</span></span><br><span class="line">    &#125;</span><br><span class="line">  	</span><br><span class="line">  	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">nextToken</span><span class="params">()</span>&#123;</span><br><span class="line">      	indexOfToken++;</span><br><span class="line">    &#125;</span><br><span class="line">  	</span><br><span class="line">  	<span class="keyword">public</span> Token <span class="title function_">curToken</span><span class="params">()</span>&#123;</span><br><span class="line">      	<span class="keyword">return</span> tokens.get(indexOfToken);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">//Lexer.java
+public class Lexer&#123;
+    private int pos = 0;
+    private final String input;
+    private int indexOfToken = 0;
+    private ArrayList&lt;Token&gt; tokens;
+  
+      public Lexer(String input) &#123;
+           //TODO
+    &#125;
+      
+      public void nextToken()&#123;
+          indexOfToken++;
+    &#125;
+      
+      public Token curToken()&#123;
+          return tokens.get(indexOfToken);
+    &#125;
+&#125;
+</code></pre>
 <p>Parser将我们拆分好的token解析成对应的因子、项和表达式。这部分给我带来的最大的收获就是“铁路警察，各管一段”的思想，当parseExpr()的时候需要得到构成这个Expr的各个项，但是我们只需要直接调用parseTerm()就好，不必去考虑parseTerm()实现的具体细节，同理当parseTerm()的时候也不必去思考parseFactor()是怎么实现的，真正使得各个方法各司其职。</p>
 <p>而到了展开计算这部分，我借鉴了往届学长博客的思路，因为我们最后得到的结果都是形如<br>$$<br>\sum{a<em>x^b}<br>$$<br>这样的形式，所以我用Unit类来存储a</em>x^b这样的单项式，用Poly类来存储求和后的多项式，在Poly类中设置addPoly()和mulPoly()进行加法乘法计算，对应的在Unit中也要实现mulUnit()方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Unit.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Unit</span>&#123;</span><br><span class="line">  	<span class="keyword">private</span> BigInteger coe;  <span class="comment">//系数</span></span><br><span class="line">  	<span class="keyword">private</span> BigInteger expo; <span class="comment">//x的指数</span></span><br><span class="line">  </span><br><span class="line">  	<span class="keyword">public</span> Unit <span class="title function_">mulUnit</span><span class="params">(Unit other)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Unit</span>(coe.multiply(other.coe), expo.multiply(other.expo));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">//Unit.java
+public class Unit&#123;
+      private BigInteger coe;  //系数
+      private BigInteger expo; //x的指数
+  
+      public Unit mulUnit(Unit other) &#123;
+        return new Unit(coe.multiply(other.coe), expo.multiply(other.expo));
+    &#125;
+&#125;
+</code></pre>
 <h3 id="第二次作业"><a href="#第二次作业" class="headerlink" title="第二次作业"></a>第二次作业</h3><p>本次作业中需要完成的任务为：读入<strong>一系列自定义函数的定义</strong>以及一个包含幂函数、指数函数、自定义函数调用的<strong>表达式</strong>，输出<strong>恒等变形展开所有括号后</strong>的表达式。相较于第一次作业改变比较大，尤其体现在最后多项式的加法乘法以及合并同类项的逻辑上。</p>
 <h4 id="自定义函数部分"><a href="#自定义函数部分" class="headerlink" title="自定义函数部分"></a>自定义函数部分</h4><p>在自定义函数部分我设计了两个类，CustomDefiner和FuncFactor类，分别负责处理自定义函数以及在解析的时候转化为函数因子。</p>
 <h5 id="CustomDefiner"><a href="#CustomDefiner" class="headerlink" title="CustomDefiner"></a>CustomDefiner</h5><p>由于我们定义的函数并不为某一个因子所特有，而是在这一表达式中通用，联想到课上荣文戈老师举出的选课系统的例子加上往届学长的优秀博客的启发，我打算采用一个静态的工具类来存储自定义函数的相关信息，如函数名、函数的形参以及函数的定义式，并且它并不实例化对象，所以所有的属性和方法都设置成static。</p>
@@ -359,29 +443,85 @@
 <li>func2def通过函数名寻找到函数的定义式</li>
 <li>func2virtual通过函数名寻找到形参列表。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomDefiner</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, String&gt; func2def = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> HashMap&lt;String, ArrayList&lt;String&gt;&gt; func2virtual = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">public class CustomDefiner &#123;
+    private static HashMap&lt;String, String&gt; func2def = new HashMap&lt;&gt;();
+    private static HashMap&lt;String, ArrayList&lt;String&gt;&gt; func2virtual = new HashMap&lt;&gt;();
+&#125;
+</code></pre>
 <p>同时该类包含两个方法:</p>
 <ul>
 <li>addFunc负责在标准输入自定义函数中将函数相关信息进行解析和存储。</li>
 <li>callFunc负责解析表达式中的函数因子时将实参代入进行表达式替换</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CustomDefiner.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addFunc</span><span class="params">(String input)</span>&#123;</span><br><span class="line">  	<span class="comment">//TODO//</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">callFunc</span><span class="params">(String name, ArrayList&lt;Factor&gt; actualParameters)</span>&#123;</span><br><span class="line">  	<span class="comment">//TODO//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">//CustomDefiner.java
+public static void addFunc(String input)&#123;
+      //TODO//
+&#125;
+public static String callFunc(String name, ArrayList&lt;Factor&gt; actualParameters)&#123;
+      //TODO//
+&#125;
+</code></pre>
 <p>值得一提的是，在callFunc中进行表达式替换时我并没有采取replaceAll的方式，因为这样可能导致字母替换的混乱，所以在这里我采取了一种朴素的略显笨拙的方案，就是建立一个从形参到实参的HashMap映射，然而遍历函数的定义式字符串，如果遇到形参就替换成实参，其中遇到exp的时候要特殊处理，具体实现如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CustomDefiner.java</span></span><br><span class="line"><span class="comment">//callFunc</span></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">HashMap&lt;String, Factor&gt; vir2actual = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; parameters.size(); i++) &#123;</span><br><span class="line">						vir2actual.put(parameters.get(i), actualParameters.get(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; definition.length(); i++) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> String.valueOf(definition.charAt(i));</span><br><span class="line">  					<span class="keyword">if</span>(cur.equals(<span class="string">&quot;e&quot;</span>)) &#123;</span><br><span class="line">              	sb.append(<span class="string">&quot;exp(&quot;</span>);</span><br><span class="line">              	i+=<span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (vir2actual.containsKey(cur)) &#123;</span><br><span class="line">                <span class="type">Factor</span> <span class="variable">factor</span> <span class="operator">=</span> vir2actual.get(cur);</span><br><span class="line">                sb.append(factor.toPoly().toString());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                sb.append(cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">return</span> sb.toString();</span><br></pre></td></tr></table></figure>
-
+<pre><code class="java">//CustomDefiner.java
+//callFunc
+StringBuilder sb = new StringBuilder();
+HashMap&lt;String, Factor&gt; vir2actual = new HashMap&lt;&gt;();
+for (int i = 0; i &lt; parameters.size(); i++) &#123;
+                        vir2actual.put(parameters.get(i), actualParameters.get(i));
+&#125;
+for (int i = 0; i &lt; definition.length(); i++) &#123;
+            String cur = String.valueOf(definition.charAt(i));
+                      if(cur.equals(&quot;e&quot;)) &#123;
+                  sb.append(&quot;exp(&quot;);
+                  i+=3;
+            &#125;
+            else if (vir2actual.containsKey(cur)) &#123;
+                Factor factor = vir2actual.get(cur);
+                sb.append(factor.toPoly().toString());
+            &#125; else &#123;
+                sb.append(cur);
+            &#125;
+        &#125;
+return sb.toString();
+</code></pre>
 <h5 id="FuncFactor"><a href="#FuncFactor" class="headerlink" title="FuncFactor"></a>FuncFactor</h5><p>在FuncFactor类中只包含一个Expr属性funcExpr, 意为将表达式中的函数替换后得到的表达式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//FuncFactor.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FuncFactor</span> <span class="keyword">implements</span> <span class="title class_">Factor</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Expr funcExpr;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FuncFactor</span><span class="params">(String name, ArrayList&lt;Factor&gt; actualParameters)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">funcString</span> <span class="operator">=</span> CustomDefiner.callFunc(name,actualParameters);</span><br><span class="line">        <span class="type">Lexer</span> <span class="variable">lexer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Lexer</span>(PreProcess.process(funcString));</span><br><span class="line">        <span class="type">Parser</span> <span class="variable">parser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Parser</span>(lexer);</span><br><span class="line">        funcExpr = parser.parseExpr();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">//FuncFactor.java
+public class FuncFactor implements Factor &#123;
+    private Expr funcExpr;
 
+    public FuncFactor(String name, ArrayList&lt;Factor&gt; actualParameters) &#123;
+        String funcString = CustomDefiner.callFunc(name,actualParameters);
+        Lexer lexer = new Lexer(PreProcess.process(funcString));
+        Parser parser = new Parser(lexer);
+        funcExpr = parser.parseExpr();
+    &#125;
+</code></pre>
 <h4 id="指数函数和合并同类项"><a href="#指数函数和合并同类项" class="headerlink" title="指数函数和合并同类项"></a>指数函数和合并同类项</h4><p>指数函数因子的实现比较简单，和第一次作业区别不大，这里不再赘述。</p>
 <p>在我看来本次作业最大的难点在于最后答案的形式发生很大的变化，每一个最小单元加入了exp(factor)^n，最后的形式变成了<br>$$<br>\sum {a<em>x^b</em>e^{expExpo}}<br>$$<br>因此加法乘法和合并同类项的逻辑需要一些变动。</p>
 <h5 id="Unit类"><a href="#Unit类" class="headerlink" title="Unit类"></a>Unit类</h5><ul>
 <li><p>Unit类中，首先加入了指数函数括号外的指数expExpo以及exp括号内的多项式inside，为了方便运算，直接把inside定义为Poly类型的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Unit.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Unit</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> BigInteger coe;</span><br><span class="line">    <span class="keyword">private</span> BigInteger expo;</span><br><span class="line">    <span class="keyword">private</span> Poly inside;</span><br><span class="line">    <span class="keyword">private</span> BigInteger expExpo;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">//Unit.java
+public class Unit &#123;
+    private BigInteger coe;
+    private BigInteger expo;
+    private Poly inside;
+    private BigInteger expExpo;
+&#125;
+</code></pre>
 </li>
 <li><p>在运算时涉及到了深克隆的问题，如果直接在原对象上修改会产生一些意料之外的后果，于是我添加了一个深克隆方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Unit.java</span></span><br><span class="line"><span class="keyword">public</span> Unit <span class="title function_">deepClone</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">BigInteger</span> <span class="variable">newCoe</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigInteger</span>(coe.toString());</span><br><span class="line">        <span class="keyword">if</span> (inside.Empty() || inside.isZero() || expExpo.compareTo(zero) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Unit</span>(newCoe, expo);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">Poly</span> <span class="variable">newInside</span> <span class="operator">=</span> inside.deepClone();</span><br><span class="line">            <span class="type">BigInteger</span> <span class="variable">newExpExpo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigInteger</span>(expExpo.toString());</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Unit</span>(newCoe, expo, newInside, newExpExpo);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">//Unit.java
+public Unit deepClone() &#123;
+        BigInteger newCoe = new BigInteger(coe.toString());
+        if (inside.Empty() || inside.isZero() || expExpo.compareTo(zero) == 0) &#123;
+            return new Unit(newCoe, expo);
+        &#125; else &#123;
+            Poly newInside = inside.deepClone();
+            BigInteger newExpExpo = new BigInteger(expExpo.toString());
+            return new Unit(newCoe, expo, newInside, newExpExpo);
+        &#125;
+    &#125;
+</code></pre>
 </li>
 <li><p>由于要判断是否可以合并同类项，这里我重写了equals方法进行判断</p>
 </li>
@@ -390,13 +530,48 @@
 <li><p>这里很多同学采用的HashMap来存储Unit来快速地进行合并同类项，我在采用HashMap的时候出现了很多问题，最后才用了ArrayList来存储，通过双重for循环来合并同类项。</p>
 </li>
 <li><p>在Poly类中同样需要实现深克隆，由于Unit中inside为Poly类型，所以深克隆的时候进行递归的调用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Poly <span class="title function_">deepClone</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Poly</span> <span class="variable">poly</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Poly</span>();</span><br><span class="line">        <span class="keyword">for</span> (Unit unit : <span class="built_in">this</span>.units) &#123;</span><br><span class="line">            <span class="type">Unit</span> <span class="variable">newUnit</span> <span class="operator">=</span> unit.deepClone();</span><br><span class="line">            poly.addUnit(newUnit);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> poly;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<pre><code class="java">public Poly deepClone() &#123;
+        Poly poly = new Poly();
+        for (Unit unit : this.units) &#123;
+            Unit newUnit = unit.deepClone();
+            poly.addUnit(newUnit);
+        &#125;
+        return poly;
+    &#125;
+</code></pre>
+</li>
 </ul>
 <h3 id="第三次作业"><a href="#第三次作业" class="headerlink" title="第三次作业"></a>第三次作业</h3><p>本次作业中需要完成的任务为：读入<strong>一系列自定义函数的定义</strong>以及一个包含幂函数、指数函数、自定义函数调用、求导算子的<strong>表达式</strong>，输出<strong>恒等变形展开所有括号后</strong>的表达式。</p>
 <p>在前两次作业架构的基础上，第三次作业实现起来比较容易，在求导这一问题上，我认为有两种方法，一种是层次化求导，也就是在Expr, Term和Factor类中实现derive()方法，遇到dx()就调用对应的derive()；另一种是在最后转换成多项式后再求导也就是在Unit和Poly中实现derive()方法。这里我选择的是前者。</p>
 <p>层次化求导的derive()方法比较好实现，为了解析求导因子，我建了个Derivation类来存储求导信息，其中要注意的是当求导因子嵌套的时候，要将Derivation存储的表达式转换成字符串，再用lexer和parser重新解析一次。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Derivation</span> <span class="keyword">implements</span> <span class="title class_">Factor</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Expr expr;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Poly result;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Derivation</span><span class="params">(Expr expr)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.expr = expr;</span><br><span class="line">        <span class="built_in">this</span>.result = expr.derive();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Poly <span class="title function_">toPoly</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Poly <span class="title function_">derive</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Lexer</span> <span class="variable">lexer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Lexer</span>(<span class="built_in">this</span>.toPoly().toString());</span><br><span class="line">        <span class="type">Parser</span> <span class="variable">parser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Parser</span>(lexer);</span><br><span class="line">        <span class="keyword">return</span> parser.parseExpr().derive();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Factor <span class="title function_">deepClone</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Derivation</span>(<span class="built_in">this</span>.expr.deepClone());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="java">public class Derivation implements Factor &#123;
+    private Expr expr;
 
+    private Poly result;
+
+    public Derivation(Expr expr) &#123;
+        this.expr = expr;
+        this.result = expr.derive();
+    &#125;
+
+    @Override
+    public Poly toPoly() &#123;
+        return result;
+    &#125;
+
+    @Override
+    public Poly derive() &#123;
+        Lexer lexer = new Lexer(this.toPoly().toString());
+        Parser parser = new Parser(lexer);
+        return parser.parseExpr().derive();
+    &#125;
+
+    @Override
+    public Factor deepClone() &#123;
+        return new Derivation(this.expr.deepClone());
+    &#125;
+&#125;
+</code></pre>
 <h2 id="bug分析"><a href="#bug分析" class="headerlink" title="bug分析"></a>bug分析</h2><p>我的bug主要集中在第一次作业上，有的项在运算后系数会变为0，我在toString()时将其变为空串，但是在最后输出的时候忘记特判使得加号保留了下来。第二次和第三次没有出现正确性上的bug，但是会有没有合并同类项的情况导致性能分暴跌，我的设计中由于用ArrayList存储Unit，这就导致<code>exp((x^2+2*x))</code>和<code>exp((2*x+x^2))</code>无法合并掉。</p>
 <p>在互测中我利用评测机对房间内的成员的代码评测，大致确定bug产生的原因，然后针对这个bug手动构造一些复杂度较低但是精确hack的数据。找到的bug大多是在优化输出长度的过程中产生的，例如寻找最大公因数的时候出现除0操作，还有形如exp(-x^2)这样的去掉括号过多导致输出不合法。</p>
 <h2 id="优化方面"><a href="#优化方面" class="headerlink" title="优化方面"></a>优化方面</h2><p>考虑到性能分占比不大，而且在优化exp的时候要考虑到的情况比较复杂，所以第二次作业我没有进行太多优化，仅仅特别判别了一下exp内是数字的情况，例如<code>exp(2)^2–&gt;exp(4)</code>，但是强测中有两个点的性能分直接爆零，其中一个测试点是exp内的多项式每一项的因数都相同，可以提取出去。所以在第三次作业中我特别处理了这种情况，以及优化了<code>exp((4*x))–&gt;exp(x)^4</code>这类情况。</p>
@@ -1268,17 +1443,17 @@
         <div class="content" v-pre>
             
             <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
             
