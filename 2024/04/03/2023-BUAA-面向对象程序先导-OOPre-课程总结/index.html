@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="ClarkBigD">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/04/03/2023-buaa-面向对象程序先导-oopre-课程总结/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="一、最终作业的架构设计编辑 二、历次作业分析总结历时九周的OOPre课程暂时告一段落了，下个学期我们将迎来OO正课。我想正好趁着第八次作业的机会来总结一下历次作业中踩过的坑点以及一路走来的心路历程。 第一次作业：由于是第一次接触java语言以及面向对象的编程理念，第一次课的作业是给定一份关于小孩去水果店买水果的代码，让我们来找出其中语法上的错误以及bug，大概分为以下几类： (1) 在类的构造中不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023 BUAA 面向对象程序先导(OOPre)课程总结">
+<meta property="og:url" content="http://example.com/2024/04/03/2023-BUAA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E5%85%88%E5%AF%BC-OOPre-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="ClarkBigD Digital World">
+<meta property="og:description" content="一、最终作业的架构设计编辑 二、历次作业分析总结历时九周的OOPre课程暂时告一段落了，下个学期我们将迎来OO正课。我想正好趁着第八次作业的机会来总结一下历次作业中踩过的坑点以及一路走来的心路历程。 第一次作业：由于是第一次接触java语言以及面向对象的编程理念，第一次课的作业是给定一份关于小孩去水果店买水果的代码，让我们来找出其中语法上的错误以及bug，大概分为以下几类： (1) 在类的构造中不">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e1b4ebe43564488092caa87b225601e5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a634d9d0d3e94a55b7e2d4025235f05d.jpeg">
+<meta property="article:published_time" content="2024-04-03T15:23:44.000Z">
+<meta property="article:modified_time" content="2024-04-03T15:29:33.035Z">
+<meta property="article:author" content="ClarkBigD">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/e1b4ebe43564488092caa87b225601e5.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/logo.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            2023 BUAA 面向对象程序先导(OOPre)课程总结 -
+        
+        ClarkBigD Digital World
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        ClarkBigD Digital World
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"ClarkBigD Digital World","subtitle":{"text":["一块一块建造梦想～"],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/ClarkBigD","instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/EvanNotFound/hexo-theme-redefine","Blog":"https://ohevan.com","Friends":"/friends"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                ClarkBigD Digital World
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://ohevan.com">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/friends">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://ohevan.com">BLOG</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/friends">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">2023 BUAA 面向对象程序先导(OOPre)课程总结</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/logo.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">ClarkBigD</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-03 23:23:44</span>
+        <span class="mobile">2024-04-03 23:23:44</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-03 23:29:33</span>
+            <span class="mobile">2024-04-03 23:29:33</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>14 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="一、最终作业的架构设计"><a href="#一、最终作业的架构设计" class="headerlink" title="一、最终作业的架构设计"></a>一、最终作业的架构设计</h1><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/e1b4ebe43564488092caa87b225601e5.png"
+                      alt="img"
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                >编辑</p>
+<h1 id="二、历次作业分析总结"><a href="#二、历次作业分析总结" class="headerlink" title="二、历次作业分析总结"></a>二、历次作业分析总结</h1><p>历时九周的OOPre课程暂时告一段落了，下个学期我们将迎来OO正课。我想正好趁着第八次作业的机会来总结一下历次作业中踩过的坑点以及一路走来的心路历程。</p>
+<h2 id="第一次作业："><a href="#第一次作业：" class="headerlink" title="第一次作业："></a>第一次作业：</h2><p>由于是第一次接触java语言以及面向对象的编程理念，第一次课的作业是给定一份关于小孩去水果店买水果的代码，让我们来找出其中语法上的错误以及bug，大概分为以下几类：</p>
+<p>(1) 在类的构造中不需要加任何类型修饰，直接public Child(){}即可；</p>
+<p>(2) 在一个类中不能调用其他类里private的属性，只可以调用其public的方法，如在Seller类中:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">child.money -= APPLE_PRICE;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p> 应该修改为:</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">child.subMoney(APPLE_PRICE);</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>(3) 在定义函数的时候要注意是否有static修饰，如果有static则函数调用的结果不会访问或者修改任何对象（非static）数据成员，例如：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> appleCount;</span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> bananaCount;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addOneFruit</span><span class="params">(String goal)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (goal.equals(<span class="string">&quot;apple&quot;</span>)) &#123;</span><br><span class="line">            appleCount++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (goal.equals(<span class="string">&quot;banana&quot;</span>)) &#123;</span><br><span class="line">            bananaCount++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>此时IDEA会有Warning提示无法引用非static字段appleCount和bananaCount。</p>
+<p>这里想顺带说一说我对于面向对象的理解：和C语言这种面向过程的编程语言不同，以java和C++为代表的面向对象编程语言，顾名思义就是以对象为一个编程单位来进行操作，在一个对象中包含了其所拥有的各种属性以及操作方法。二者之间一种很直观的区别体现在：我们在程序设计和数据结构课程中的C语言代码往往只需要一个.c文件就可以解决一整道问题，但是到了面向对象我们需要很多.java文件才可以实现题目要求的种种功能。这些.java文件就是一个个<strong>类(class)，</strong>我们通过类来进行对这些属性和方法的封装以及对象的声明。初次接触时感觉和C语言中的**结构体(struct)**很相似，区别主要在于类里可以定义方法，也就是我们经常说的函数，而结构体里只能定义成员变量，没有与其相关的方法。</p>
+<h2 id="第二次作业："><a href="#第二次作业：" class="headerlink" title="第二次作业："></a>第二次作业：</h2><p>第二次作业正式开始了本学期的迭代开发之旅，后续的每一次作业基本都是在第二次作业的基础上进行功能的增加和修改。<strong>在接下来的几次作业中，请想象你是一个穿越到魔法大陆上的冒险者，在旅途中，你需要收集各种道具，使用各种装备，招募其他冒险者加入队伍，提升自己的等级并体验各种战斗。</strong></p>
+<p>第二次作业主要练习了类的创建和封装以及像ArrayList以及HashMap等容器的使用。我创建了Adventurer，Bottle，Equipment三个类来分别表示冒险者，药水瓶以及装备。其中在定义类的构造器的时候可以用关键词this来表示当前自身的对象：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Adventurer</span><span class="params">(<span class="type">int</span> id, String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>在创建容器时首先要用new 关键词来在内存中开辟一块空间来存储元素，这里需要注意在容器中声明元素的类型不能用int, double, long这类的基本类型，而是要用它们相对应的类，比如Integer, Double, Long等等。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;Integer&gt; numbers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">private</span> HashMap&lt;Integer,String&gt; students = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>在进行容器遍历的时候可以使用java自带的for-each循环：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: numbers) &#123;</span><br><span class="line">            System.out.println(num);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">for</span> (String stu : students.values()) &#123;</span><br><span class="line">            System.out.println(stu);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<h2 id="第三次作业："><a href="#第三次作业：" class="headerlink" title="第三次作业："></a>第三次作业：</h2><p>第三次作业增加了一个Food类，同时引入了“背包”这一概念，将冒险者的物品进行了拥有和携带的区别。这次作业卡了我很长时间，难点是在于利用什么样的容器来实现关于背包功能的种种限制。后来我意识到可以用容器的嵌套来实现name和id这两种属性对于物品的指向，因此在Adventurer类中新添加了以下属性： </p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> HashMap&lt;String, Equipment&gt; equipmentBag = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">private</span> HashMap&lt;String, TreeMap&lt;Integer, Bottle&gt;&gt; bottleBag = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">private</span> HashMap&lt;String, TreeMap&lt;Integer, Food&gt;&gt; foodBag = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>由于装备不存在会出现有相同名字的两件装备的情况（后来的装备会顶替掉前面的装备），所以我直接用(name-&gt;object)这样的一个映射来进行装备的查找。在携带装备的时候先判断是否有同名装备，如果有的话就把这件装备remove掉，然后再把新装备put进去。</p>
+<p>但是对于bottle和food会出现同名装备的问题，并且在使用的时候要首先使用id最小的物品，所以我采取了在HashMap中嵌套了一个TreeMap(TreeMap可以将键值对按照key值从小到大的顺序进行排列)，也就是(name-&gt;(id-&gt;object))。通过查找name可以获得一系列同名的物品，再调用TreeMap中的firstEntry方法来找到id最小的物品。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Adventurer</span> <span class="variable">thisAdv</span> <span class="operator">=</span> adventures.get(id);</span><br><span class="line"><span class="type">Food</span> <span class="variable">thisFood</span> <span class="operator">=</span> thisAdv.getFoodBag().get(name).firstEntry().getValue();</span><br><span class="line">thisAdv.eat(thisFood);</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<h2 id="第四次作业："><a href="#第四次作业：" class="headerlink" title="第四次作业："></a>第四次作业：</h2><p>第四次作业加入了战斗模式以及战斗日志的查询功能，这也是我第一次接触到正则表达式。基本思路就是根据解析输入进来的战斗日志与正则表达式进行匹配来确定该条战斗日志属于饮用药水、单体攻击还是AOE攻击。在最开始出现的很多错误都是由于正则表达式的书写错误导致相关战斗日志没能匹配上。</p>
+<p>由于代码风格对于方法最多有60行代码的限制，在本次作业中我采用ArrayList&lt;ArrayList<String>&gt; inputInfo这种类似于二维字符串数组的形式对输入的内容进行解析。与课程组在前几次作业中提供的输入解析不同，由于输入中增加了战斗日志的输入，且战斗日志不算入操作指令个数n的范围中，所以要进行一下修改。我把之前的for循环改成了while循环，利用一个计数器cnt来记录输入指令的条数，一旦cnt&#x3D;&#x3D;n就跳出循环。由于战斗日志的输入是不加空格的，所以我用contains(“ “)来区分这一行的输入是指令还是战斗日志。</p>
+<p>但是最后强测的时候有一个点出bug了，后来经过排查我发现是那个测试点的最后一条数据是14操作，而我的输入解析检测到是最后一条指令所以直接就跳出循环了，导致后面的战斗日志没有保存到容器中。最后我加入了单独对于这种情况的判断。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">MyScan</span><span class="params">(Scanner in, ArrayList&lt;ArrayList&lt;String&gt;&gt; inputInfo, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (in.hasNextLine()) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">nextLine</span> <span class="operator">=</span> in.nextLine(); <span class="comment">// 读取本行指令</span></span><br><span class="line">            String[] strings = nextLine.trim().split(<span class="string">&quot; +&quot;</span>); <span class="comment">// 按空格对行进行分割</span></span><br><span class="line">            inputInfo.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(strings))); <span class="comment">// 将指令分割后的各个部分存进容器中</span></span><br><span class="line">            <span class="keyword">if</span> (nextLine.contains(<span class="string">&quot; &quot;</span>)) &#123;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt == n) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> inputInfo.size();</span><br><span class="line">                <span class="keyword">if</span> (Integer.parseInt(String.valueOf(inputInfo.get(size - <span class="number">1</span>).get(<span class="number">0</span>))) == <span class="number">14</span>) &#123;<span class="comment">//如果是第14条操作</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> Integer.parseInt(String.valueOf(inputInfo.get(size - <span class="number">1</span>).get(<span class="number">2</span>)));</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; temp; i++) &#123;</span><br><span class="line">                        <span class="type">String</span> <span class="variable">nextLine1</span> <span class="operator">=</span> in.nextLine(); <span class="comment">// 读取本行指令</span></span><br><span class="line">                        String[] strings1 = nextLine1.trim().split(<span class="string">&quot; +&quot;</span>); <span class="comment">// 按空格对行进行分割</span></span><br><span class="line">                        inputInfo.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(strings1)));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<h2 id="第五次作业："><a href="#第五次作业：" class="headerlink" title="第五次作业："></a>第五次作业：</h2><p>本次作业又回归到了第一次作业的给一份给定的代码debug模式，本次作业的bug主要以下这几类：</p>
+<p>(1) 当判断两个对象的属性是否相等时，不能用&#x3D;&#x3D;来判断，主要是因为当我们声明两个变量soldier1和soldier2时，由于new关健词在内存中分别开辟了一块区域用来存放该对象，soldier1和soldier2相当于C语言中的指针变量(java中没有指针),都指向的是内存中一块单独崭新的对象，虽然这两个对象的一些属性是一样的，但是这两个对象是存放在两块区域内毫不相干的两个对象。在debug的时候可以发现在两个对象后面有两个不同的数字@1057和@1058，就可以很直观地看出来两个对象的差异。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/a634d9d0d3e94a55b7e2d4025235f05d.jpeg"
+                      alt="img"
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                >编辑</p>
+<p>(2) 当魔王将未被编队的士兵编队后，要记得将unformedSoldier中的该士兵及时删除，这类bug在我们迭代的作业中也很常见，并且很致命。</p>
+<p>(3) 进行咒语的检测时，原代码是从头向后开始遍历，然而根据题意应该是在第一个‘@’字符出现的位置开始遍历，这里我们可以使用String自带的indexOf()方法，来返回到第一个‘@’字符的索引位置。</p>
+<p>(4) 我们在HashMap这类容器中遍历对象一般都用到for-each循环，但是用这个循环边遍历边删除对象会发生报错提示：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.util.ConcurrentModificationException</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>指导书中建议的写法是用到迭代器(Iterator)本身提供的删除方法，但是IDEA提示了一个相对来说更加便捷的删除操作removeIf：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">screen</span><span class="params">(<span class="type">int</span> standard)</span> &#123;</span><br><span class="line">    soldiers.removeIf(soldier -&gt; soldier.notQualifiedByStandard(standard));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      alt="点击并拖拽以移动"
+                ></p>
+<p>很好理解，就是当容器中的对象满足-&gt;后面的条件时就将其删除。</p>
+<h2 id="第六次作业："><a href="#第六次作业：" class="headerlink" title="第六次作业："></a>第六次作业：</h2><p>第六次作业引入了子类的继承和接口的实现，两种药水瓶和两种装备分别继承自基本类型Bottle和Equipment，子类的构造以及引用父类的属性的时候可以直接用super来调用父类的属性，同时原来的bottles和bottleBag等基本类型的容器也不用进行更改，当判断冒险者持有的某一物品的类型的时候可以用instanceof关键词来判断该对象是否属于某一子类，以便安全地进行向下转型。</p>
+<p>有一个坑点在于，在计算不同类型的装备造成的伤害时，要看好是与攻击者的某个属性有关还是被攻击者的属性有关，最开始我没有很好地区分导致最后计算出的伤害一团乱。</p>
+<p>同时受到第五次作业中给定作业的启发，我单独创建了一个Manager类来管理所有的操作指令，之前的作业把指令上的操作都堆积在了Main类里，这样一是会导致main函数不是很清晰，二是在编写Junit单元测试的时候对Main类不好测试。在调整后直接在main方法中调用Manager里的solve()一个方法就可以进行指令的操作，同时也使得main方法中不会发生代码行数过多的报错。</p>
+<p>与此同时我也将第四次作业中跟战斗日志有关的属性和方法都提取成一个FightLog类，前几次作业中的战斗日志放在Adventurer类中，就导致Adventurer类的方法太多，行数太多，很有可能出现每一次迭代开发都要推翻之前的重来，所以让不同的类来各司其职，各自封装，可以方便日后的迭代和维护过程，减小工作量。</p>
+<h2 id="第七次作业："><a href="#第七次作业：" class="headerlink" title="第七次作业："></a>第七次作业：</h2><p>最后一次作业可以说是最让我崩溃的一次作业了，当时debug将近de了三天，一度有过放弃的念头，最后还是咬咬牙挺了过来，好在在临ddl前找到了bug。这次的作业是采用一些设计模式来进行商店买卖东西的相关操作，买卖东西的逻辑相对简单，需要注意的是在22号命令卖出冒险者携带的所有物品的时候，我们在遍历背包内的物品时，边遍历边删除会导致运行错误，正确做法是采用迭代器Iterator自带的remove方法来进行删除(这个在第五次作业指导书中有提到过)。但是我对迭代器的用法不是很熟，所以最后采取的操作是先遍历将所有物品的钱加在一起，然后用HashMap的clear方法直接一键清空背包，但是在遍历的时候一定要记得把冒险者拥有的这件物品也一并删除掉。</p>
+<p>debug到最后发现bug几乎不是这次作业的错误，都是之前的作业的历史遗留问题(奇怪的是之前作业的强测居然没有测出来)。首先是在使用瓶子的时候，我之前采取的是直接将capacity清零，但是到了这次作业由于卖空瓶到商店的时候商店要记录的是空瓶原本的容量，这就会导致卖空瓶的时候容量的记录会出现错误，所以我给Bottle又加了一个boolean类型的empty属性和isEmpty方法来判断空瓶。然后是在eat方法中我忘记把吃过的食物从背包中删除了，就很奇怪之前强侧近万条数据都没有测出来，反倒被这次的中测给测出来了，属于是之前的作业埋下的雷了。最后本次作业的强测不出意外地寄了，跟室友的代码对拍了一晚上，找到出现问题的地方，然后跟踪出问题的这一个冒险者，在两千多行的输入指令中一点点缩小范围看是哪一条指令的问题，最后发现是在被雇佣者给雇主钱的时候，被雇佣者的钱不够，结果我把被雇佣者的钱先给清零了再加到雇主身上，加了个寂寞，调换一下清零和给钱顺序就AC了。</p>
+<p>在写最后一次作业的时候和室友交流发现其实背包最好也单独提取出一个类来单独进行管理，这样可以使Adventurer类里的方法更加简洁一些。但是考虑到如果按照这种方法就要把之前的部分大改，再加上这次已经是最后一次迭代了，所以想想还是将错就错了(doge)。其实到了最后发现自己的架构设计的还是不够完善，类与类之间的业务逻辑还是过多地纠缠在了一起，代码的耦合程度还是太高，没有实现相对独立地执行各自功能。但是这也算是提前为OO正课进行试错，也许这才是OOPre的意义所在。</p>
+<h1 id="三、使用JUnit心得"><a href="#三、使用JUnit心得" class="headerlink" title="三、使用JUnit心得"></a>三、使用JUnit心得</h1><p>在最开始的几次作业中我感觉JUnit的作用比较有限，因为类和方法的数量都很有限，但是到了后面的作业随着功能的增加，将各个类中的各个方法独立测试就可以很方便的找到一些bug，尤其是在创造样例的时候要多考虑一些边界条件，这样能找到一些中测的时候可能忽略掉的bug，以便顺利地通过强测。总的来说JUnit在我们进行作业迭代的过程中是一个好帮手。</p>
+<h1 id="四、对OOPre课程的简单建议"><a href="#四、对OOPre课程的简单建议" class="headerlink" title="四、对OOPre课程的简单建议"></a>四、对OOPre课程的简单建议</h1><p>1、感觉可以稍微增强一下中测的强度，数据点增加一些极端的情况，不然强测扣分真的很难受。</p>
+<p>2、在指导书里丰富一些设计模式的使用方法以及应用实例。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 2023 BUAA 面向对象程序先导(OOPre)课程总结</li>
+        <li><strong>Author:</strong> ClarkBigD</li>
+        <li><strong>Created at
+                :</strong> 2024-04-03 23:23:44</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-03 23:29:33
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/03/2023-BUAA-面向对象程序先导-OOPre-课程总结/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/03/31/Lab0%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Lab0实验报告</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">2023 BUAA 面向对象程序先导(OOPre)课程总结</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%9C%80%E7%BB%88%E4%BD%9C%E4%B8%9A%E7%9A%84%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">一、最终作业的架构设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%8E%86%E6%AC%A1%E4%BD%9C%E4%B8%9A%E5%88%86%E6%9E%90%E6%80%BB%E7%BB%93"><span class="nav-text">二、历次作业分析总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第一次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第二次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第三次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第四次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第五次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第六次作业：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%9A"><span class="nav-text">第七次作业：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8JUnit%E5%BF%83%E5%BE%97"><span class="nav-text">三、使用JUnit心得</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AF%B9OOPre%E8%AF%BE%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E5%BB%BA%E8%AE%AE"><span class="nav-text">四、对OOPre课程的简单建议</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ClarkBigD</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        4 posts in total
+                    </span>
+                    
+                        <span>
+                            10.7k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
